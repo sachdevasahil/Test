@@ -1,17 +1,7 @@
-- name: Playbook for creating user on Linux Node
-  hosts: "servera"
-  user: "student"
-  become: "true"
-  vars:
-    users:
-    -  "user1"
-    - "user2"
-    - "user3"
+---
+- name: create a user
+  hosts: all
   tasks:
-  - name: "Create user accounts"
-    user:
-      name: "{{ item }}"
-      groups: "wheel"
-    with_items: "{{ users }}"
-
-..
+   - name: create a user on linux server
+     user:
+       name: checkuser12
