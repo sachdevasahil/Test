@@ -1,0 +1,7 @@
+---
+- name: test ping
+  hosts: all
+  user: root
+  tasks:
+  - name: test pingpong
+    ping:
